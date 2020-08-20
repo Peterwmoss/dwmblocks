@@ -6,7 +6,9 @@ static const Block blocks[] = {
 
     {" ⌨ ", "setxkbmap -query | awk '/layout/{print $2}'", 120, 0},
 
-    {"  ", "hostname -i | sed 's/ *$//g'", 0, 1},
+    {"  ", "iw wlan0 info | grep ssid | cut -d ' ' -f 2", 0, 1},
+
+    {" ", "hostname -i | sed 's/ *$//g'", 0, 1},
 
     {" 🔊 ", "pamixer --get-volume-human | tr -d '%'", 0, 10},
 
