@@ -10,6 +10,10 @@ static const Block blocks[] = {
 
     {" ", "hostname -i | sed 's/ *$//g'", 0, 1},
 
+    {" ", "/home/peter/.scripts/battery", 5, 0},
+
+    {"  ", "/home/peter/.scripts/backlight", 0, 11},
+
     {" 🔊 ", "pamixer --get-volume-human | tr -d '%'", 0, 10},
 
     {"  ", "sensors | awk '/^Package/{print $4}'", 15, 0},
