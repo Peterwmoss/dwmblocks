@@ -8,7 +8,7 @@ static const Block blocks[] = {
 
     {"  ", "iw wlan0 info | grep ssid | cut -d ' ' -f 2", 15, 1},
 
-    {" ", "hostname -i | sed 's/ *$//g'", 0, 1},
+    {" ", "hostname -i | sed 's/ *$//g'", 15, 1},
 
     {" ", "/home/peter/.scripts/battery", 5, 0},
 
