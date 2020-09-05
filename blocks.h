@@ -2,6 +2,8 @@
 // recompile using the make command.
 static const Block blocks[] = {
     /*Icon*/ /*Command*/ /*Update Interval*/ /*Update Signal*/
+    {"  ", "pacman -Qu | wc -l", 60, 0},
+
     {"  ", "free -h | awk '/^Mem/ { print $3\"/\"$2 }' | sed s/i//g", 15, 0},
 
     {" ⌨ ", "setxkbmap -query | awk '/layout/{print $2}'", 120, 0},
