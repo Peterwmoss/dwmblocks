@@ -11,7 +11,7 @@ static const Block blocks[] = {
 
     {"  ", "free -h | awk '/^Mem/ { print $3\"/\"$2 }' | sed s/i//g", 5, 0},
 
-    {"  ", "pacman -Qu | wc -l", 60, 0},
+    {"  ", "checkupdates | wc -l", 60, 0},
 
     {" ⌨ ", "setxkbmap -query | awk '/layout/{print $2}'", 120, 0},
 
