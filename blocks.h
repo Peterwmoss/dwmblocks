@@ -2,7 +2,7 @@
 // recompile using the make command.
 static const Block blocks[] = {
     /*Icon*/ /*Command*/ /*Update Interval*/ /*Update Signal*/
-    {"  ", "uname -r", 60, 0},
+    {"  ", "uname -r", 60, 0},
 
     {"  ",
      "df -lh | grep \"/dev/nvme\" | awk '{print $3 \"/\" $2 \" - \" $5 \" "
@@ -11,23 +11,17 @@ static const Block blocks[] = {
 
     {"  ", "free -h | awk '/^Mem/ { print $3\"/\"$2 }' | sed s/i//g", 5, 0},
 
-    {"  ", "checkupdates | wc -l", 60, 0},
+    {"  ", "iw wlp2s0 info | grep ssid | cut -d ' ' -f 2", 15, 1},
 
-    {" ⌨ ", "setxkbmap -query | awk '/layout/{print $2}'", 120, 0},
+    {" ", "/home/peter/.local/scripts/battery", 5, 0},
 
-    {"  ", "iw wlan0 info | grep ssid | cut -d ' ' -f 2", 15, 1},
+    {"  ", "xbacklight | awk -F '.' '{ print $1 }'", 0, 11},
 
-    {" ", "hostname -i | sed 's/ *$//g'", 15, 1},
+    {"  ", "pamixer --get-volume-human | tr -d '%'", 0, 10},
 
-    {" ", "/home/peter/.scripts/battery", 5, 0},
+    {"  ", "sensors | awk '/crit/{print $2}'", 5, 0},
 
-    {"  ", "/home/peter/.scripts/backlight", 0, 11},
-
-    {" 🔊 ", "pamixer --get-volume-human | tr -d '%'", 0, 10},
-
-    {"  ", "sensors | awk '/^Package/{print $4}'", 5, 0},
-
-    {" 📆 ", "date '+%d-%m %T'", 1, 0},
+    {"  ", "date '+%d-%m %T'", 1, 0},
 };
 
 // sets delimeter between status commands. NULL character ('\0') means no
