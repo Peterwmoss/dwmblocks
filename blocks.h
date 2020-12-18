@@ -17,7 +17,7 @@ static const Block blocks[] = {
 
     {"  ", "xbacklight | awk -F '.' '{ print $1 }'", 0, 11},
 
-    {"  ", "pamixer --get-volume-human | tr -d '%'", 0, 10},
+    {"  ", "pulsemixer --get-volume | awk '{print $1}'", 0, 10},
 
     {"  ", "sensors | awk '/crit/{print $2}'", 5, 0},
 
