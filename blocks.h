@@ -17,7 +17,7 @@ static const Block blocks[] = {
 
     {"  ", "xbacklight | awk -F '.' '{ print $1 }'", 0, 11},
 
-    {"  ", "pulsemixer --get-volume | awk '{print $1}'", 0, 10},
+    {" ", "if [ $(pulsemixer --get-mute) -eq \"0\" ]; then pulsemixer --get-volume | awk '{print \" \"$1\"%\"}'; else printf \"ﱝ muted\\n\"; fi", 0, 10},
 
     {"  ", "sensors | awk '/crit/{print $2}'", 5, 0},
 
