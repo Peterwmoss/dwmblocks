@@ -11,17 +11,17 @@ static const Block blocks[] = {
 
     {"  ", "free -h | awk '/^Mem/ { print $3\"/\"$2 }' | sed s/i//g", 5, 0},
 
-    {"  ", "checkupdates | wc -l", 60, 0},
-
     {" ⌨ ", "setxkbmap -query | awk '/layout/{print $2}'", 120, 0},
 
-    {"  ", "hostname -i | sed 's/ *$//g'", 15, 1},
+    {"  ", "ip address show | grep 'inet ' | grep 'inet .[^2][^7]' | awk '{print $2}' | sed 's/\\/24//g'", 15, 1},
 
     {" 🔊 ", "pamixer --get-volume-human | tr -d '%'", 0, 10},
 
+    {" ", "/home/peter/.local/scripts/battery", 30, 0},
+
     {"  ", "sensors | awk '/^Package/{print $4}'", 5, 0},
 
-    {" 📆 ", "date '+%d-%m %T'", 1, 0},
+    {"  ", "date '+%d-%m %T'", 1, 0},
 };
 
 // sets delimeter between status commands. NULL character ('\0') means no
