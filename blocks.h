@@ -17,6 +17,8 @@ static const Block blocks[] = {
 
     {" 🔊 ", "pamixer --get-volume-human | tr -d '%'", 0, 10},
 
+    {"  ", "/home/peter/.local/scripts/backlight", 0, 11},
+
     {" ", "/home/peter/.local/scripts/battery", 30, 0},
 
     {"  ", "sensors | awk '/^Package/{print $4}'", 5, 0},
